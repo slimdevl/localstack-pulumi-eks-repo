@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -9,11 +9,12 @@ die () {
 }
 
 # Check some variables (need real keys)
-[ -z "${LOCALSTACK_API_KEY:-}" ] && { die "must have LOCALSTACK_API_KEY for pro features"}
-[ -z "${PULUMI_ACCESS_TOKEN:-}" ] && { die "must have PULUMI_ACCESS_TOKEN for pulumi automation in this repo"}
+[ -z "${LOCALSTACK_API_KEY:-}" ] && { die "must have LOCALSTACK_API_KEY for pro features"; }
+[ -z "${PULUMI_ACCESS_TOKEN:-}" ] && { die "must have PULUMI_ACCESS_TOKEN for pulumi automation in this repo"; }
 
 # start localstack
 docker-compose up -d
+sleep 30
 
 # get module dependancies (uncomment these just in case running as root)
 export PATH=$PATH:/usr/local/go/bin

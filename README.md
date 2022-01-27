@@ -1,3 +1,27 @@
+# Local Stack EKS Bug Reproduction
+
+1. Get a pulumi account, get a token, export the token
+   ```bash
+   export PULUMI_ACCESS_TOKEN="pul-..."
+   ```
+2. Get a localstack pro account, get a token, export the token
+   ```bash
+   export LOCALSTACK_API_KEY="..."
+   ```
+3. Run the reproduction case
+   ```bash
+   ./run_issue_reproduction.sh
+   ```
+   At this point you can look at localstack logs in another terminal
+4. Cleanup to run it again...
+    ```bash
+    ./cleanup_to_try_again.sh
+    ```
+---
+
+> Original README from pulumi/examples
+
+
 # AWS Golang EKS Cluster
 This example creates an AWS EKS Cluster and deploys a sample container application to it
 
@@ -51,7 +75,7 @@ After cloning this repo, run these commands from the working directory:
 6. Ensure that the application is running as expected:
 
     ```bash
-   $ curl $(pulumi stack output url) 
+   $ curl $(pulumi stack output url)
    ```
 
 

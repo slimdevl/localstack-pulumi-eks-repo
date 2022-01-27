@@ -14,7 +14,7 @@ die () {
 
 # start localstack
 docker-compose up -d
-sleep 30
+sleep 15
 
 # get module dependancies (uncomment these just in case running as root)
 export PATH=$PATH:/usr/local/go/bin
